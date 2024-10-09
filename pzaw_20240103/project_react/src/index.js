@@ -4,12 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Sci from './Sci';
 import MainIndex from './mainIndex';
+import MainerIndex from './mainerIndex';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Sci />
     <MainIndex />
+    <MainerIndex/>
   </React.StrictMode>
 );
 

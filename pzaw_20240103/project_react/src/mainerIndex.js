@@ -1,5 +1,4 @@
-import { click } from "@testing-library/user-event/dist/click";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState} from "react";
 
 function MainerIndex() {
 
@@ -10,52 +9,49 @@ function MainerIndex() {
     const inputTextRef = useRef();
     const inputText2Ref = useRef();
     const inputSelectRef = useRef();
-    const inputRadioRef = useRef();
+    let radioValue = "white"
 
-    const submit = () => {
+    const submit = (e) => {
+        e.preventDefault()
         setFirstText(inputTextRef.current.value)
         setSecondText(inputText2Ref.current.value)
         setSelect(inputSelectRef.current.value)
-        setRadio(inputRadioRef.current.value)
-    }
-    const clear = () => {
-        inputTextRef.value = ""
-        inputText2Ref.value = ""
-        inputSelectRef.value = ""
-        inputRadioRef.value = "white"
+        setRadio(radioValue)
     }
 
     const myStyle = {
-        backgroundColor: "white"
+        backgroundColor: radio
     }
 
-    return(
+    return (
         <div>
             <div>
-                <input ref={inputTextRef} type="text" name="firstText" onChange={(event) => {setFirstText(event.target.value)}}/>
-                <input ref={inputText2Ref} type="text" name="secondText" onChange={(event) => {setSecondText(event.target.value)}}/>
-                <select ref={inputSelectRef} name="select" onChange={(event) => {setFirstText(event.target.value)}}>
-                    <option value={"CPU"}>CPU</option>
-                    <option value={"GPU"}>GPU</option>
-                    <option value={"RAM"}>RAM</option>
-                </select>
-                <input type="radio" name="colorOfBackground" value={"Red"}/>
-                <label>Red</label>
-                <input type="radio" name="colorOfBackground" value={"Blue"}/>
-                <label>Blue</label>
-                <input type="radio" name="colorOfBackground" value={"Green"}/>
-                <label>Green</label>
-                <input type="radio" name="colorOfBackground" value={"Pink"}/>
-                <label>Pink</label>
-                <input type="button" value={"Submit"} onClick={submit}/>
-                <input type="button" value={"Clear"} onClick={clear()}/>
+                <form>
+                    <input ref={inputTextRef} type="text" name="firstText" />
+                    <input ref={inputText2Ref} type="text" name="secondText" />
+                    <select ref={inputSelectRef} name="select" >
+                        <option value={"CPU"}>CPU</option>
+                        <option value={"GPU"}>GPU</option>
+                        <option value={"RAM"}>RAM</option>
+                    </select>
+                    <input type="radio" name="colorOfBackground" value={"Red"} onChange={() => {radioValue = "red"}}/>
+                    <label>Red</label>
+                    <input type="radio" name="colorOfBackground" value={"Blue"} onChange={() => {radioValue = "blue"}}/>
+                    <label>Blue</label>
+                    <input type="radio" name="colorOfBackground" value={"Green"} onChange={() => {radioValue = "green"}}/>
+                    <label>Green</label>
+                    <input type="radio" name="colorOfBackground" value={"Pink"} onChange={() => {radioValue = "pink"}}/>
+                    <label>Pink</label>
+                    <input type="button" value={"Submit"} onClick={submit} />
+                    <input type="reset" value={"Clear"} />
+                </form>
             </div>
             <span></span>
             <div>
                 <div style={myStyle}>
-                    {firstText}
-                    {secondText}
-                    {select}
+                    {firstText}<br/>
+                    {secondText}<br/>
+                    {select}<br/>
                 </div>
             </div>
         </div>

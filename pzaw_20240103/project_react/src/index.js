@@ -5,6 +5,7 @@ import './index.css';
 import Sci from './Sci';
 import MainIndex from './mainIndex';
 import MainerIndex from './mainerIndex';
+import MyOwnTable from './myOwnTable';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <Sci />
     <MainIndex />
     <MainerIndex/>
+    <MyOwnTable/>
   </React.StrictMode>
 );
 

@@ -35,6 +35,7 @@ function MainIndex() {
                 <input type="button" value="Klikniesz?" onClick={showButtonClicked}/>
                 {name}
                 <p>{numb}</p>
+                <img src="./icons/icon14_02.png" />
             </div>
         </div>
     );

@@ -1,0 +1,24 @@
+#mainDivOfTile {
+    max-width:12vw;
+    margin: 2vw;
+    border: 0.5vw;
+    border-color: black;
+    border-style: dotted;
+}
+
+#mainDivOfApp {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input {
+    align-self: center;
+    padding: 1%;
+    margin: 1%;
+}
+
+#shit {
+    align-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}

@@ -2,18 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import Sci from './Sci';
-import MainIndex from './mainIndex';
-import MainerIndex from './mainerIndex';
-import MyOwnTable from './myOwnTable';
+// import Sci from './Sci';
+// import MainIndex from './mainIndex';
+// import MainerIndex from './mainerIndex';
+// import MyOwnTable from './myOwnTable';
+// import Tile from './tile';
+import MainApp from './Task_Grid/mainApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Sci />
-    <MainIndex />
-    <MainerIndex/>
-    <MyOwnTable/>
+    <MainApp></MainApp>
   </React.StrictMode>
 );
 
